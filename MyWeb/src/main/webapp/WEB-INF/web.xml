@@ -9,7 +9,8 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  <!-- ================================================ -->
+  
+  <!-- HelloServlet 등록 ========================== -->
   <servlet>
   	<servlet-name>Hello</servlet-name>
   	<servlet-class>my.com.HelloServlet</servlet-class>
@@ -18,5 +19,7 @@
   	<servlet-name>Hello</servlet-name>
   	<url-pattern>/hi</url-pattern>
   </servlet-mapping>
-  <!-- ================================================ -->
+  <!-- ========================================== -->
 </web-app>
+
+

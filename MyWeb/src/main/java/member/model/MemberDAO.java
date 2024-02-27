@@ -108,8 +108,21 @@ public class MemberDAO {
 		
 		return 1;//회원 인증 받은 경우
 	}//-------------------------------
-	
-	
+	/** 회원정보 수정 처리 - U (Update)*/
+	public int updateMember(MemberVO user) throws SQLException {
+		try {
+			con=DBUtil.getCon();
+			String sql="UPDATE java_member SET name=?, tel=?, pw=? WHERE id=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, user.getName());
+			ps.setString(2, user.getTel());
+			ps.setString(3, user.getPw());
+			ps.setString(4, user.getId());
+			return ps.executeUpdate();
+		}finally {
+			close();
+		}
+	}//---------------------------------
 	public void close() {
 		try {
 			if(rs!=null) rs.close();
@@ -119,5 +132,6 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}//-------------------------------
+
 
 }////////////////////////////////////////
